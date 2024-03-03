@@ -271,11 +271,12 @@ export default {
         addBalanceRUB() {
             if (Number.isInteger(Number(this.addRUB[0]))) {
                 this.balanceRUB = Number(this.balanceRUB) + Number(this.addRUB);
+                this.balanceRUB = this.balanceRUB.toFixed(2);
                 this.addRUB = '';
-                localStorage.setItem('balanceRUB', this.balanceRUB.toFixed(2));
+                localStorage.setItem('balanceRUB', this.balanceRUB);
                 this.isActive = !this.isActive;
             } else {
-                this.addRUB = '';
+                this.addRUB = ''
             }
         },
 
