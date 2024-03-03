@@ -155,7 +155,6 @@ export default {
 
     methods: {
         onInput(val) {
-            console.log(123);
             this.isAlert = false;
             this.isDisabled = false;
             const strVal = val + '';
@@ -208,7 +207,7 @@ export default {
                         this.balanceRUB = Number(Number(this.balanceRUB) + n.val).toFixed(2);
                         localStorage.setItem('balanceRUB', this.balanceRUB);
                     } else if (n.title == 'USD') {
-                        this.balanceUSD = Number(Number(this.balanceUSD) + Number(n.val)).toFixed(2);
+                        this.balanceUSD = Number(Number(this.balanceUSD) + n.val).toFixed(2);
                         localStorage.setItem('balanceUSD', this.balanceUSD);
                     } else if (n.title == 'EUR') {
                         this.balanceEUR = Number(Number(this.balanceEUR) + n.val).toFixed(2);
@@ -321,6 +320,7 @@ export default {
                 }
             }
             this.quantityOutput = '';
+            this.onInput(this.inputNum);
         }
     },
 };
