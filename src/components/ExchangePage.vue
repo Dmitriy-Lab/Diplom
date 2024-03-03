@@ -286,8 +286,9 @@ export default {
                         this.isVisibility = true;
                     } else {
                         this.balanceRUB = Number(this.balanceRUB) - Number(this.quantityOutput);
+                        this.balanceRUB = this.balanceRUB.toFixed(2);
                         this.quantityOutput = '';
-                        localStorage.setItem('balanceRUB', this.balanceRUB.toFixed(2));
+                        localStorage.setItem('balanceRUB', this.balanceRUB);
                         this.isOpen = !this.isOpen;
                     }
                 } else if (this.selectedOutput == 1) {
@@ -295,8 +296,9 @@ export default {
                         this.isVisibility = true;
                     } else {
                         this.balanceUSD = Number(this.balanceUSD) - Number(this.quantityOutput);
+                        this.balanceUSD = this.balanceUSD.toFixed(2);
                         this.quantityOutput = '';
-                        localStorage.setItem('balanceUSD', this.balanceUSD.toFixed(2));
+                        localStorage.setItem('balanceUSD', this.balanceUSD);
                         this.isOpen = !this.isOpen;
                     }
                 } else if (this.selectedOutput == 2) {
@@ -304,8 +306,9 @@ export default {
                         this.isVisibility = true;
                     } else {
                         this.balanceEUR = Number(this.balanceEUR) - Number(this.quantityOutput);
+                        this.balanceEUR = this.balanceEUR.toFixed(2);
                         this.quantityOutput = '';
-                        localStorage.setItem('balanceEUR', this.balanceEUR.toFixed(2));
+                        localStorage.setItem('balanceEUR', this.balanceEUR);
                         this.isOpen = !this.isOpen;
                     }
                 } else if (this.selectedOutput == 3) {
@@ -313,8 +316,9 @@ export default {
                         this.isVisibility = true;
                     } else {
                         this.balanceCNY = Number(this.balanceCNY) - Number(this.quantityOutput);
+                        this.balanceCNY = this.balanceCNY.toFixed(2);
                         this.quantityOutput = '';
-                        localStorage.setItem('balanceCNY', this.balanceCNY.toFixed(2));
+                        localStorage.setItem('balanceCNY', this.balanceCNY);
                         this.isOpen = !this.isOpen;
                     }
                 }
