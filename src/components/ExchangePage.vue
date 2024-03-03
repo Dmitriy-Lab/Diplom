@@ -155,6 +155,7 @@ export default {
 
     methods: {
         onInput(val) {
+            console.log(123);
             this.isAlert = false;
             this.isDisabled = false;
             const strVal = val + '';
@@ -188,16 +189,16 @@ export default {
                 if (n.title == this.selectedYour) {
                     if (n.title == 'RUB') {
                         this.balanceRUB = Number(this.balanceRUB).toFixed(2) - Number(n.val).toFixed(2);
-                        localStorage.setItem('balanceRUB', this.balanceRUB.toFixed(2));
+                        localStorage.setItem('balanceRUB', this.balanceRUB);
                     } else if (n.title == 'USD') {
                         this.balanceUSD = Number(this.balanceUSD).toFixed(2) - Number(n.val).toFixed(2);
-                        localStorage.setItem('balanceUSD', this.balanceUSD.toFixed(2));
+                        localStorage.setItem('balanceUSD', this.balanceUSD);
                     } else if (n.title == 'EUR') {
                         this.balanceEUR = Number(this.balanceEUR).toFixed(2) - Number(n.val).toFixed(2);
-                        localStorage.setItem('balanceEUR', this.balanceEUR.toFixed(2));
+                        localStorage.setItem('balanceEUR', this.balanceEUR);
                     } else if (n.title == 'CNY') {
                         this.balanceCNY = Number(this.balanceCNY).toFixed(2) - Number(n.val).toFixed(2);
-                        localStorage.setItem('balanceCNY', this.balanceCNY.toFixed(2));
+                        localStorage.setItem('balanceCNY', this.balanceCNY);
                     }
                 }
             })
@@ -205,19 +206,20 @@ export default {
                 if (n.title == this.selectedNew) {
                     if (n.title == 'RUB') {
                         this.balanceRUB = Number(Number(this.balanceRUB) + n.val).toFixed(2);
-                        localStorage.setItem('balanceRUB', this.balanceRUB.toFixed(2));
+                        localStorage.setItem('balanceRUB', this.balanceRUB);
                     } else if (n.title == 'USD') {
                         this.balanceUSD = Number(Number(this.balanceUSD) + Number(n.val)).toFixed(2);
-                        localStorage.setItem('balanceUSD', this.balanceUSD.toFixed(2));
+                        localStorage.setItem('balanceUSD', this.balanceUSD);
                     } else if (n.title == 'EUR') {
                         this.balanceEUR = Number(Number(this.balanceEUR) + n.val).toFixed(2);
-                        localStorage.setItem('balanceEUR', this.balanceEUR.toFixed(2));
+                        localStorage.setItem('balanceEUR', this.balanceEUR);
                     } else if (n.title == 'CNY') {
                         this.balanceCNY = Number(Number(this.balanceCNY) + n.val).toFixed(2);
-                        localStorage.setItem('balanceCNY', this.balanceCNY.toFixed(2));
+                        localStorage.setItem('balanceCNY', this.balanceCNY);
                     }
                 }
             })
+            this.onInput(this.inputNum);
         },
         async getRates() {
             const url = new URL('https://www.cbr-xml-daily.ru/daily_json.js');
@@ -317,7 +319,7 @@ export default {
                         this.isOpen = !this.isOpen;
                     }
                 }
-            } 
+            }
             this.quantityOutput = '';
         }
     },
