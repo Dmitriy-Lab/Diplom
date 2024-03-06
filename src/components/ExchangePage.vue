@@ -282,7 +282,8 @@ export default {
         output() {
             if (Number.isInteger(Number(this.quantityOutput[0]))) {
                 if (this.selectedOutput == 0) {
-                    if (this.quantityOutput > this.balanceRUB) {
+                    if (Number(this.quantityOutput) > Number(this.balanceRUB)) {
+                        console.log('rub', this.quantityOutput, this.balanceRUB);
                         this.isVisibility = true;
                     } else {
                         this.balanceRUB = Number(this.balanceRUB) - Number(this.quantityOutput);
@@ -292,7 +293,8 @@ export default {
                         this.isOpen = !this.isOpen;
                     }
                 } else if (this.selectedOutput == 1) {
-                    if (this.quantityOutput > this.balanceUSD) {
+                    if (Number(this.quantityOutput) > Number(this.balanceUSD)) {
+                        console.log('usd', typeof(this.quantityOutput));
                         this.isVisibility = true;
                     } else {
                         this.balanceUSD = Number(this.balanceUSD) - Number(this.quantityOutput);
@@ -302,7 +304,7 @@ export default {
                         this.isOpen = !this.isOpen;
                     }
                 } else if (this.selectedOutput == 2) {
-                    if (this.quantityOutput > this.balanceEUR) {
+                    if (Number(this.quantityOutput) > Number(this.balanceEUR)) {
                         this.isVisibility = true;
                     } else {
                         this.balanceEUR = Number(this.balanceEUR) - Number(this.quantityOutput);
@@ -312,7 +314,7 @@ export default {
                         this.isOpen = !this.isOpen;
                     }
                 } else if (this.selectedOutput == 3) {
-                    if (this.quantityOutput > this.balanceCNY) {
+                    if (Number(this.quantityOutput) > Number(this.balanceCNY)) {
                         this.isVisibility = true;
                     } else {
                         this.balanceCNY = Number(this.balanceCNY) - Number(this.quantityOutput);
