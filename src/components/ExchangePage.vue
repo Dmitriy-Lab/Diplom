@@ -159,7 +159,6 @@ export default {
             this.isDisabled = false;
             const strVal = val + '';
             if (!Number.isInteger(Number(strVal[0]))) {
-                console.log(val[0]);
                 this.isDisabled = true;
             }
 

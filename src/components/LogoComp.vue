@@ -22,7 +22,7 @@ export default {
     methods: {
         balance() {
             this.$emit('check', {
-                balanceRub: localStorage.getItem('balanceRub'),
+                balanceRUB: localStorage.getItem('balanceRUB'),
             })
         }
     },
