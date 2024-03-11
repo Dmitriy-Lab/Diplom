@@ -217,8 +217,7 @@ export default {
                     }
                 }
             })
-            this.onInput(this.inputNum);
-        },
+            this.onInput(this.inputNum);},
         async getRates() {
             const url = new URL('https://www.cbr-xml-daily.ru/daily_json.js');
             const response = await fetch(url);
@@ -274,6 +273,7 @@ export default {
                 this.addRUB = '';
                 localStorage.setItem('balanceRUB', this.balanceRUB);
                 this.isActive = !this.isActive;
+                this.onInput(this.inputNum);
             } else {
                 this.addRUB = ''
             }
@@ -283,7 +283,6 @@ export default {
             if (Number.isInteger(Number(this.quantityOutput[0]))) {
                 if (this.selectedOutput == 0) {
                     if (Number(this.quantityOutput) > Number(this.balanceRUB)) {
-                        console.log('rub', this.quantityOutput, this.balanceRUB);
                         this.isVisibility = true;
                     } else {
                         this.balanceRUB = Number(this.balanceRUB) - Number(this.quantityOutput);
@@ -294,7 +293,6 @@ export default {
                     }
                 } else if (this.selectedOutput == 1) {
                     if (Number(this.quantityOutput) > Number(this.balanceUSD)) {
-                        console.log('usd', typeof(this.quantityOutput));
                         this.isVisibility = true;
                     } else {
                         this.balanceUSD = Number(this.balanceUSD) - Number(this.quantityOutput);

@@ -10,14 +10,10 @@ export default {
     name: 'LogoComp',
 
     data() {
-        return {
-            
+        return {    
         };
     },
 
-    mounted() {
-        
-    },
 
     methods: {
         balance() {

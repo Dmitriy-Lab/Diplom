@@ -16,7 +16,6 @@
                     </div>
                     <div class="table__grid">
                         <p> {{ getUSD() }} </p>
-
                     </div>
                     <div class="table__grid">
                         <p>Евро</p>

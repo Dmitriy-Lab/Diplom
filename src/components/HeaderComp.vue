@@ -41,18 +41,9 @@ export default {
             addRUB: ''
         };
     },
-
-    mounted() {
-
-    },
-
     created() {
         this.checkBalance();
     },
-
-    computed: {
-    },
-
     methods: {
         show() {
             this.isActive = !this.isActive;
